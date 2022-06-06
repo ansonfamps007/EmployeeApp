@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: EmployeeApp
+  datasource:
+    url: ${MYSQL_JDBC_URL:jdbc:mysql://127.0.0.1:3306/employeedb} 
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PWD:root}
+server:
+  port: 9091
