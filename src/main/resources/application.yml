@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: EmployeeApp
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/employeeDB
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    com:
+      app:
+        employee: DEBUG
