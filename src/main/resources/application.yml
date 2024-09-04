@@ -1,10 +1,10 @@
 spring:
   application:
     name: EmployeeApp
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/employeeDB
-    username: root
-    password: root
+#  datasource:
+#    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/employeeDB
+#    username: ${MYSQL_USER:emp_user}
+#    password: ${MYSQL_PASSWORD:emp_pw}
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,3 +13,5 @@ logging:
     com:
       app:
         employee: DEBUG
+server:
+  port: 8080
