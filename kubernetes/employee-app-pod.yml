@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: employee-app
+spec:
+  containers:
+  - name: employee-app
+    image: ansonfamps007/ans-docker-repo:employee-app
