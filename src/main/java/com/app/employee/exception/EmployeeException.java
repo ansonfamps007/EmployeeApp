@@ -3,10 +3,10 @@ package com.app.employee.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException {
+@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+public class EmployeeException extends RuntimeException {
 
-    public ResourceNotFoundException(String message) {
+    public EmployeeException(String message) {
         super(message);
     }
 

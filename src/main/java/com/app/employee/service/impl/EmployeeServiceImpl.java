@@ -2,6 +2,7 @@ package com.app.employee.service.impl;
 
 import com.app.employee.dto.EmployeeDto;
 import com.app.employee.entity.Employee;
+import com.app.employee.exception.EmployeeException;
 import com.app.employee.exception.ResourceNotFoundException;
 import com.app.employee.mapper.EmployeeMapper;
 import com.app.employee.repository.EmployeeRepo;
@@ -23,9 +24,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto create(EmployeeDto employeeDto) {
-        return EmployeeMapper.mapToEmployeeDto(employeeRepo
-                .save(EmployeeMapper.mapToEmployee(employeeDto)));
-
+        if (employeeRepo.existsByEmail(employeeDto.getEmail())) {
+            throw new EmployeeException("Employee already registered with given mail id");
+        } else {
+            return EmployeeMapper.mapToEmployeeDto(employeeRepo
+                    .save(EmployeeMapper.mapToEmployee(employeeDto)));
+        }
     }
 
     @Override
